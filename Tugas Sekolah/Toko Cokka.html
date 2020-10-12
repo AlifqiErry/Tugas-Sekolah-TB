@@ -33,8 +33,8 @@
               <div class="col-sm-4 offset-md-1 py-4">
                   <h4 class="text-white">Contact</h4>
                   <ul class="list-unstyled">
-                  <li><a href="#" class="text-white">Follow on Instagram</a></li>
-                  <li><a href="#" class="text-white">Like on Instagram</a></li>
+                  <li><a href="https://www.instagram.com/cokka.project/" class="text-white">Follow on Instagram</a></li>
+                  <li><a href="https://www.instagram.com/cokka.catalog/" class="text-white">Like on Instagram</a></li>
                 </ul>
               </div>
             </div>
@@ -56,18 +56,6 @@
           </div>
         </div>
       </header>
-
-    <!-- <nav class="navbar navbar-expand-lg navbar-white bg-white">
-
-        <div class="container">
-            <a class="navbar-brand" href="">
-                <img src="C:\Users\AlifqiErry\Pictures\TUGAS\cokka\cokka2.JPG" alt="img" width="85" height="35" ali class="d-inline-block align-top">
-            </a>
-            <form class="form-inline">
-                <input class="form-control" type="search" placeholder="Search">
-            </form>
-        </div>
-    </nav> -->
 
 
         <ul class="nav justify-content-center nav-tabs nav-light bg-light mt-2" id="myTab" role="tablist">
@@ -285,10 +273,17 @@
                         <small class="form-text text-muted">Harap masukkan nama lengkap</small>
                     </div>
 
+                    <!-- Alamat -->
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <textarea class="form-control" id="input_alamat"></textarea>
+                    </div>
+
                     <!-- Nama Barang -->
                     <div class="form-group">
-                        <label>Nama Barang</label>
+                        <label>Barang</label>
                         <select class="form-control" id="input_barang">
+                            <option selected>Nama Barang</option>
                           <option value="THE SIMSURF">THE SIMSURF</option>
                           <option value="COKKA’S SUPPLY">COKKA’S SUPPLY</option>
                           <option value="LET’S SURFING">LET’S SURFING</option>
@@ -302,33 +297,53 @@
                         </select>
                     </div>
 
+                    <!-- Ukuran -->
+                    <label>Ukuran</label>
+                    <select class="form-control" id="input_ukuran">
+                        <option selected>Ukuran</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
                     <!-- jumlahbarang -->
                     <div class="form-group">
                         <label>Jumlah Barang</label>
                         <input type="number" class="form-control" id="input_jumlah">
+                        <small class="form-text text-muted">Pembelian lebih dari 3 diskon 30%</small>
                     </div>
 
+
                     <!-- Harga -->
+                    <div class="form-group">
+                        <label>Harga</label><br>
+                        <input type="hidden" class="form-control" id="input_harga" value="125000">
+                        <strong class="form-text text-muted">125.000 For all</strong>
+                    </div>
+
+                    <!-- Simpan -->
+                    <div class="p-2">
+                        <button class="btn btn-primary mb-4" onclick="add()">Simpan</button>
+                    </div>
+
+                </div>
                     
 
 
+                        
 
 
-
-            </div>
-
-
-
-            
-
-
-
+            <h3>Detail Pesanan</h3>
             <div class="container rounded">
                 <table class="table table-bordered mt-4">
                     <thead class="thead-light">
                         <tr>
+                            <th scope="col"><center>No</center></th>
                             <th scope="col"><center>Nama Pembeli</center></th>
-                            <th scope="col"><center>Nama Barang</center></th>
+                            <th scope="col"><center>Alamat</center></th>
+                            <th scope="col"><center>Barang</center></th>
+                            <th scope="col"><center>Ukuran</center></th>
                             <th scope="col"><center>Jumlah</center></th>
                             <th scope="col"><center>Harga</center></th>
                             <th scope="col"><center>Action</center></th>
@@ -338,14 +353,159 @@
                 </table>
             </div>
 
+            <!-- Modal -->
+                <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                <div class="form-group">
+                <h3><center>Masukan data sekali lagi</center></h3>
+                
+                <label for="namapembeli">Nama Pembeli</label>
+                <input type="text" class="form-control" id="modalnama">
+                
+                <label for="alamat">Alamat</label>
+                <input type="textarea" class="form-control" id="modalalamat">
+                
+                <label for="pembayaran">Pembayaran</label>
+                <select class="form-control" id="modalpembayaran">
+                    <option selected>Pembayaran</option>
+                    <option value="Alfamart/Indomart">Alfamart/Indomart</option>
+                    <option value="BCA">BCA</option>
+                    <option value="Pulsa">Pulsa</option>
+                </select>
+                
+                
+                <label for="Pemngiriman">Pengiriman</label>
+                <select class="form-control" id="modalpengiriman">
+                     <option selected>Pengiriman</option>
+                    <option value="JNE">JNE</option>
+                    <option value="J&T">J&T</option>
+                    <option value="SiCepat">SiCepat</option>
+                    <option value="TIKI">TIKI</option>
+                    </select>
+
+                    <div class="p-2">
+                        <button class="btn btn-primary mb-4">Bayar</button>
+                    </div>
+
             <script>
-                var nama = []
-                var jenis = []
-                var material = []
+
+                var namapembeli = []
+                var alamat = []
+                var barang = []
+                var ukuran = []
                 var jumlah = []
                 var harga = []
 
                 var tampil = document.getElementById('tampildata')
+
+                function showData(){
+                    tampil.innerHTML = ""
+
+                    for (i = 0; i < namapembeli.length; i++) {
+                        var nodata = i + 1 
+                        const matauang='RP.'
+                        const nomor= "0" + Number(i+1)
+                        harga = "125000" * jumlah
+                        if (jumlah > 3){
+                            harga = "125000" * jumlah * Number(0.30)
+                        }else{
+                            var bg =""
+                        }
+
+                        // var  = Number([i])
+                        // if ( > 3){
+                        // var total = Number(harga[i]) * Number(0.50)
+                        //     var kembalian = Number(pembayaran[i]) - Number(total)
+                        // }else{
+                        // var total = Number(harga[i])
+                        //     var kembalian = Number(pembayaran[i]) -Number(total)
+                        // }
+
+
+                        tampil.innerHTML += "<tr>"+
+                        "<th>"+nodata+"</th>"+
+                        "<td>"+namapembeli[i]+"</td>"+
+                        "<td>"+alamat[i]+"</td>"+
+                        "<td>"+barang[i]+"</td>"+
+                        "<td>"+ukuran[i]+"</td>"+
+                        "<td>"+jumlah[i]+"</td>"+
+                        "<td>"+harga+"</td>"+
+                        "<td>"+
+                        "<button class='btn btn-warning' data-toggle='modal' data-target='#modal' herf='#'>Bayar</button>"+
+                        "<button class='btn btn-danger' herf='#' onclick='batal("+i+")'>Batal</button>"+
+                        "</td>"+
+                        "</tr>"
+
+                    }   
+                }
+
+                function total (){
+                    var valgoritma = 125.000 * parseInt(document.getElementById('input_harga').value);
+
+                    var jumlah_harga = valgoritma;
+                    document.getElementById('total').value = jumlah_harga;
+                }
+
+                showData()
+
+                function add(){
+                    var namapbaru = document.getElementById('input_nama').value
+                    var alamatbaru = document.getElementById('input_alamat').value
+                    var barangbaru = document.getElementById('input_barang').value
+                    var ukuranbaru = document.getElementById('input_ukuran').value
+                    var jumlahbaru = document.getElementById('input_jumlah').value
+                    var hargabaru = document.getElementById('input_harga').value
+
+                    if (namapbaru ==''){
+                        alert('Isi data buat pesanan terlebih dahulu')
+                    }else{
+                    namapembeli.push(namapbaru)
+                    alamat.push(alamatbaru)
+                    barang.push(barangbaru)
+                    ukuran.push(ukuranbaru)
+                    jumlah.push(jumlahbaru)
+
+
+                    showData()
+                    document.getElementById('input_nama').value = ""
+                    document.getElementById('input_alamat').value = ""
+                    document.getElementById('input_barang').value = ""
+                    document.getElementById('input_ukuran').value = ""
+                    document.getElementById('input_jumlah').value = ""
+                    document.getElementById('input_harga').value = ""
+
+                    }
+
+                }
+
+                function batal(id){
+                    var hilang = confirm("Anda yakin ingin membatalkan?")
+                    if (hilang == true){
+                        namapembeli.splice(id,1)
+                        alamat.splice(id,1)
+                        barang.splice(id,1)
+                        ukuran.splice(id,1)
+                        jumlah.splice(id,1)
+                    }else{
+                        namapembeli[id]
+                        alamat[id]
+                        barang[id]
+                        ukuran[id]
+                        jumlah[id]
+                    }
+
+                    showData()
+                }
+
+
             </script>
 
 
