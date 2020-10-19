@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+
+    <style>
+        .jumbotron {
+            background-image: url(https://images.pexels.com/photos/9379/drinking-alley-fun-bowling-9379.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+            height: 400px;
+            background-size: cover;
+            background-position-y: -20px;
+        }
+
+        .judullist {
+            height: 40px;
+        }
+
+    </style>
+
+
+  </head>
+  <body>
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 text-white">Shoes Store</h1>
+          <p class="lead text-white">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8" id="listproduk">
+
+                <!-- <div class="card float-right mr-3 mb-3" style="width: 14rem;">
+                    <img src="https://cdn.hipwallpaper.com/i/52/31/z7I9p4.jpg" class="card-img-top" alt="images" height="170px">
+                    <div class="card-body">
+                      <h5 class="card-title">Nike Air Jordan 1</h5>
+                      <p class="card-text">Rp. 2.850.000</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                </div>
+
+                <div class="card float-right mr-3 mb-3" style="width: 14rem;">
+                    <img src="https://sneakernews.com/wp-content/uploads/2018/01/jordan-4-levis-release-date-1.jpg" class="card-img-top" alt="images" height="170px">
+                    <div class="card-body">
+                      <h5 class="card-title">Levi’s x Air Jordan 4</h5>
+                      <p class="card-text">Rp. 5.650.000</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                </div>
+
+                <div class="card float-right mr-3 mb-3" style="width: 14rem;">
+                    <img src="https://sneakerfits.com/wp-content/uploads/2018/09/air-jordan-5-psg-paris-saint-germain-release-date.jpg" class="card-img-top" alt="images" height="170px">
+                    <div class="card-body">
+                      <h5 class="card-title">PSG x Air Jordan 5</h5>
+                      <p class="card-text">Rp. 5.150.000</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                </div>
+
+                <div class="card float-right mr-3 mb-3" style="width: 14rem;">
+                    <img src="https://www.kicksonfire.com/wp-content/uploads/2018/05/AIR-JORDAN-4-1.png" class="card-img-top" alt="images" height="170px">
+                    <div class="card-body">
+                      <h5 class="card-title">Travis Scott x Air Jordan Cactus Jack</h5>
+                      <p class="card-text">Rp. 7.450.000</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                </div>
+
+                <div class="card float-right mr-3 mb-3" style="width: 14rem;">
+                    <img src="https://i0.wp.com/tersier.id/wp-content/uploads/2018/12/Nigel-Sylvester-x-Air-Jordan-1-15-Rekomendasi-Nike-Air-Jordan-Terbaik-di-Tahun-2018.jpg?w=1140&ssl=1" class="card-img-top" alt="images" height="170px">
+                    <div class="card-body">
+                      <h5 class="card-title">Nigel Sylvester x Air Jordan 1</h5>
+                      <p class="card-text">Rp. 5.400.000</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                </div>
+
+                <div class="card float-right mr-3 mb-3" style="width: 14rem;">
+                    <img src="https://sneakernews.com/wp-content/uploads/2018/10/jordan-11-concord-shoes-white-black-0.jpg" class="card-img-top" alt="images" height="170px">
+                    <div class="card-body">
+                      <h5 class="card-title">Nike Air Jordan 11 Concord</h5>
+                      <p class="card-text">Rp. 3.750.000</p>
+                      <a href="#" class="btn btn-primary">Beli</a>
+                    </div>
+                </div> -->
+
+
+            </div>
+
+            <div class="col-4">
+                <div class="judullist bg-dark rounded text-center text-white pt-2"><b>List Items</b></div>
+
+                <div class="listkeranjang" id="listkeranjang">
+                    
+                </div>
+
+                  <table width="100%">
+                      <tbody>
+                          <tr>
+                              <td>Dicsount (15%)</td>
+                              <td>Rp. <span id="discount"></span></td>
+                          </tr>
+                          <tr>
+                            <td>PPN (10%)</td>
+                            <td>Rp. <span id="pajak"></span></td>
+                          </tr>
+                          <tr class="bg-dark text-white">
+                            <td>Total Bayar</td>
+                            <td>Rp. <span id="totalbayar"></span></td>
+                          </tr>
+                      </tbody>
+                  </table>
+
+                  <button type="button" class="btn btn-primary mt-3 btn-block">Bayar</button>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <script>
+        var namabarang = ['Nike Air Jordan 1','Levi’s x Air Jordan 4']
+        var hargabarang = [2850000,5650000]
+        var gambarbarang = [
+            "https://cdn.hipwallpaper.com/i/52/31/z7I9p4.jpg",
+            "https://sneakernews.com/wp-content/uploads/2018/01/jordan-4-levis-release-date-1.jpg"
+        ]
+
+        var listproduk = document.getElementById('listproduk')
+        var listkeranjang = document.getElementById('listkeranjang')
+
+
+        var namabarang_keranjang = []
+        var hargabarang_keranjang = []
+
+        function showlistproduk(){
+            listproduk.innerHTML =''
+                for (let i = 0; i < namabarang.length; i++){
+                    listproduk.innerHTML +='<div class="card float-right mr-3 mb-3" style="width: 14rem;">'+
+                    '<img src="'+gambarbarang[i]+'"'+
+                    'class="card-img-top" alt="images" height="170px">'+
+                    '<div class="card-body">'+
+                      '<h5 class="card-title">'+namabarang[i]+'</h5>'+
+                      '<p class="card-text">Rp. '+hargabarang[i]+'</p>'+
+                      '<a href="#" class="btn btn-primary"  onclick="addlistitem('+i+')">Beli</a>'+
+                    '</div>'+
+                    '</div>'
+                }
+        }
+
+        function addlistitem(id){
+            namabarang_keranjang.push(namabarang[id])
+            hargabarang_keranjang.push(hargabarang[id])
+
+            showlistkeranjang()
+        
+        }
+
+        var tampilandiscount = document.getElementById('discount')
+        var tampilanpajak = document.getElementById('pajak')
+        var tampilantotalbayar = document.getElementById('totalbayar')
+
+        function showlistkeranjang(){
+            listkeranjang.innerHTML=''
+
+            var discount = 0
+            var pajak = 0
+            var hargatotal = 0
+            var totalbayar = 0
+
+            for (let i = 0; i < namabarang_keranjang.length; i++){
+                listkeranjang.innerHTML += '<div class="card mt-3 mb-3" style="width: 22rem;">'+
+                        '<div class="card-body">'+
+                          '<h5 class="card-title">'+namabarang_keranjang[i]+'</h5>'+
+                          '<p class="card-text">Rp. '+hargabarang_keranjang[i]+'</p>'+
+                          '<p>Qty : 1</p>'+
+                          '<a href="#" class="btn btn-danger float-right" Onclick="deleteitem('+i+')">Batal</a>'+
+                        '</div>'+
+                    '</div>'
+
+                    hargatotal = hargabarang_keranjang[i]+hargatotal
+
+                    
+
+                    if(totalbayar>4000000){
+                      discount = totalbayar*0.15
+                    }else{
+                      discount = 0
+                    }
+                    totalbayar = hargatotal-discount
+
+                    pajak = totalbayar*0.1
+
+                    var totalbelanja = totalbayar - pajak
+                    tampilanpajak.innerHTML = pajak
+                    tampilandiscount.innerHTML = discount
+                    tampilantotalbayar.innerHTML = totalbelanja
+            }
+        }
+
+        showlistproduk()
+
+        function deleteitem(id){
+          namabarang_keranjang.splice(id,1)
+          hargabarang_keranjang.splice(id,1)
+
+          showlistkeranjang()
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
